@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+html,
+body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+main {
+	text-align: center;
+}
+
+.main__image {
+	max-width: 200px;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+}
