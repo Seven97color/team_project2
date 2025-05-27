@@ -23,3 +23,9 @@ main {
 	display: block;
 	margin: 0 auto;
 }
+
+input.menu-btn {
+	margin-bottom: 16px;
+	background: yellow;
+	/* テスト用に目立つ色をつけてみよう！ */
+}

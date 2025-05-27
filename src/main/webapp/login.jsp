@@ -16,6 +16,16 @@
 					alt="ロゴ">
 			</div>
 			<h2>顧客管理システム</h2>
+
+			<%
+			String error = (String) request.getAttribute("error");
+			if (error != null) {
+			%>
+			<div style="color: red; margin-bottom: 10px;"><%=error%></div>
+			<%
+			}
+			%>
+
 			<form action="login" method="post">
 				<label for="userId">ユーザ名</label><br> <input type="text"
 					name="id" placeholder=""><br> <label for="password">パスワード</label><br>
