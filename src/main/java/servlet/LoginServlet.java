@@ -8,6 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.dao.UserDAO;
+import model.entity.UserBean;
+
 /**
  * Servlet implementation class LoginServlet
  */
@@ -21,24 +24,32 @@ public class LoginServlet extends HttpServlet {
 	public LoginServlet() {
 		super();
 	}
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	
 		//フォームから送信された値を取得
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 
-		//仮の認証（本来はDB等でチェック）
-		if ("user".equals(id) && "pass".equals(password)) {
-			//認証成功　→　メニュー画面へリダイレクト
-			request.getSession().setAttribute("loginUser", id);
-			response.sendRedirect("menu.jsp");
-		} else {
-			//認証失敗　→　エラーメッセージを付けてログイン画面へ戻す
-			request.setAttribute("error", "ログイン失敗しました。もう一度入力してください。");
+		try {
+			UserDAO userDAO = new UserDAO();
+			UserBean user = userDAO.checkLogin(id, password);
+
+			if (user != null) {
+				// 認証成功 → セッションにユーザー情報を保存
+				request.getSession().setAttribute("loginUser", user.getUserId());
+				response.sendRedirect("menu.jsp");
+			} else {
+				// 認証失敗
+				request.setAttribute("error", "ログイン失敗しました。もう一度入力してください。");
+				request.getRequestDispatcher("login.jsp").forward(request, response);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			request.setAttribute("error", "システムエラーが発生しました");
 			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}
 	}

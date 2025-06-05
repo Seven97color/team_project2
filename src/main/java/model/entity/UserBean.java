@@ -4,12 +4,12 @@ import java.io.Serializable;
 
 public class UserBean implements Serializable {
   /**
-   * ユーザID
+   * customer_managerID
    */
   private String userId;
 
   /**
-   * パスワード
+   * customer_managerパスワード
    */
   private String password;
 

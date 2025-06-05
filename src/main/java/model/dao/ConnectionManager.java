@@ -9,23 +9,23 @@ public class ConnectionManager {
    * データベースURL（DB名は担当するシステムで異なる）
    * ダウンロードしたsqlファイルでDB名を確認
    */
-  private static final String URL = "jdbc:mysql://localhost:3306/employee_manager_db";
+  private static final String URL = "jdbc:mysql://localhost:3306/customer_manager";
 	
   /**
    * ユーザ（担当するシステムで異なる）
    * ダウンロードしたsqlファイルでユーザ名を確認
    */
-  private static final String USER = "employeeU";
+  private static final String USER = "customer_managerU";
 	
   /**
    * パスワード（担当するシステムで異なる）
    ** ダウンロードしたsqlファイルでパスワードを確認
    */
-  private static final String PASSWORD = "employeeP";
+  private static final String PASSWORD = "customer_managerP";
 	
   /**
    * データベース接続確立しコネクションを返す
-   * @return コネクション
+   * @return Connection
    * @throws ClassNotFoundException
    * @throws SQLException
    */
