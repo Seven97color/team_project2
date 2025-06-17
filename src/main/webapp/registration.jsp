@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>顧客登録画面</h1>
-	<form action="list.jsp" method="get">
+	<form action="/yourAppName/RegisterServlet" method="post">
 		<label for="customerName">氏名</label> <input type="text"
 			id="customerName" name="customer_Name" placeholder="山田太郎" required>
 		<br> <label for="customerkana">かな</label> <input type="text"
