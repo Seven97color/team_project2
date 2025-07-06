@@ -8,14 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class LogoutServlet
- */
 @WebServlet("/logout")
 public class LogoutServlet extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getSession().invalidate();
-		response.sendRedirect("logout.jsp");
-	}
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // セッション破棄
+        request.getSession().invalidate();
+        // ログアウト画面へリダイレクト
+        response.sendRedirect("logout.jsp");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // POSTリクエストもGETと同じ処理
+        doGet(request, response);
+    }
 }

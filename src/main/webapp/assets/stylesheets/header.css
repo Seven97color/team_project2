@@ -1,0 +1,39 @@
+body {
+  padding-top: 20px;  /* 上に20pxの余白 */
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ロゴとログアウトを左右に配置 */
+  width: 100%;
+  height: 60px;
+}
+
+.header__logo-img {
+  height: 100px;  /* ロゴの高さはお好みで調整 */
+}
+
+.header__logout-btn {
+  background: #dcdcdc;
+  padding: 6px 8px;
+  border-radius: 3px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu-center {
+  display: flex;
+  flex-direction: column;      /* 縦並び */
+  align-items: center;         /* 横方向中央寄せ */
+  justify-content: center;     /* 縦方向中央寄せ */
+  min-height: 60vh;            /* 画面中央に寄せるため高さを指定 */
+}
+
+.menu-btn[value="顧客一覧"] {
+  margin-bottom: 10px;  /* 顧客一覧の下に余白 */
+}
+
+.menu-btn[value="顧客登録"] {
+  margin-bottom: 10px;  /* 顧客登録の下に余白 */
+}

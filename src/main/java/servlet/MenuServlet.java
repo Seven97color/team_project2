@@ -21,7 +21,7 @@ public class MenuServlet extends HttpServlet {
 		System.out.println("button=" + button);
 
 		if ("顧客一覧".equals(button)) {
-			response.sendRedirect("list.jsp");
+			response.sendRedirect("ListServlet");
 		} else if ("顧客登録".equals(button)) {
 			response.sendRedirect("registration.jsp"); // 顧客登録画面のJSP名
 		} else if ("権限編集".equals(button)) {

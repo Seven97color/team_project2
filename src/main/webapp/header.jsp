@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <header>
-	<div class="header-container">
-		<div class="main__imageBox">
-			<img class="main__image" src="assets/images/seassist_logo.png"
-				alt="ロゴ">
+	<header class="header">
+		<div class="header__logo">
+			<img src="assets/images/seassist_logo.png" alt="ロゴ"
+				class="header__logo-img">
 		</div>
-		<nav>
-			<a href="logout">ログアウト</a>
-		</nav>
-	</div>
+		<form action="logout" method="post" class="header__logout-form">
+			<input type="submit" value="ログアウト" class="header__logout-btn">
+		</form>
+	</header>
+
 </header>

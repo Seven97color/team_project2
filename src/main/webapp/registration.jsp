@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h1>顧客登録画面</h1>
-	<form action="/yourAppName/RegisterServlet" method="post">
+	<form action="/CustomerManager_kimura/RegisterServlet" method="post">
 		<label for="customerName">氏名</label> <input type="text"
 			id="customerName" name="customer_Name" placeholder="山田太郎" required>
 		<br> <label for="customerkana">かな</label> <input type="text"
@@ -16,7 +16,7 @@
 		<br> <label for="zipcode">郵便番号</label> <input type="text"
 			id="zipcode" name="zipcode" maxlength="7" pattern="\d{7}"
 			placeholder="8120037" required> <br>
-		<lavel for="area">地区</lavel>
+		<label for="area">地区</label>
 		<select id="area" name="area" required>
 			<option value="">未設定</option>
 			<option value="東北">東北</option>
@@ -24,13 +24,13 @@
 			<option value="関西">関西</option>
 			<option value="九州">九州</option>
 		</select> <br>
-		<lavel>性別</lavel>
+		<label>性別</label>
 		<input type="radio" id="male" name="gender" value="男性" required>
 		<label for="male">男</label> <input type="radio" id="female"
 			name="gender" value="女性">
-		<lavel for="female">女</lavel>
+		<label for="female">女</label>
 		<br>
-		<lavel for="birthday">生年月日</lavel>
+		<label for="birthday">生年月日</label>
 		<input type="text" id="birthday" name="birthday"
 			placeholder="19910105" required> <br> <label for="tel">電話番号</label>
 		<input type="tel" id="tel" name="tel" pattern="[\d\-]{10,13}"

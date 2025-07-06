@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ログアウト画面</title>
-    <link rel="stylesheet" href="assets/stylesheets/app.css">
+    <link rel="stylesheet" href="assets/stylesheets/login.css">
 </head>
 <body>
     <div class="main">

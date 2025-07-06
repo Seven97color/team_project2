@@ -1,0 +1,55 @@
+/* 画面全体を中央寄せ */
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	/* 画面の高さに合わせる */
+}
+
+/* main要素内を中央寄せ */
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* 横方向中央 */
+	justify-content: center;
+	padding: 32px 24px;
+}
+
+/* フォーム全体を縦並び＆中央寄せ */
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* ラベルと入力欄の幅・中央寄せ・間隔調整 */
+form label {
+	width: 140px;
+	/* ラベルの幅 */
+	text-align: center;
+	/* ラベル文字中央寄せ */
+	display: block;
+}
+
+form input[type="text"],
+form input[type="password"] {
+	width: 160px;
+	/* 入力欄の幅 */
+	padding: 6px 8px;
+	font-size: 16px;
+	box-sizing: border-box;
+	margin-bottom: 0px;
+	/* 入力欄同士の余白 */
+	text-align: center;
+	/* 入力文字中央寄せ */
+}
+
+/* ログインボタン */
+form input[type="submit"] {
+	width: 120px;
+	padding: 6px 0;
+	font-size: 13px;
+	cursor: pointer;
+}

@@ -29,9 +29,9 @@ public class ListServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/yourdb", "user", "password");
+					"jdbc:mysql://localhost:3306/customer_manager", "user", "password");
 
-			String sql = "SELECT * FROM customers";
+			String sql = "SELECT * FROM m_user";
 			String searchName = request.getParameter("searchName");
 
 			if (searchName != null && !searchName.isEmpty()) {
