@@ -29,7 +29,7 @@ public class ListServlet extends HttpServlet {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/customer_manager", "user", "password");
+					"jdbc:mysql://localhost:3306/customer_manager", "customer_managerU", "customer_managerP");
 
 			String sql = "SELECT * FROM m_user";
 			String searchName = request.getParameter("searchName");
@@ -60,7 +60,7 @@ public class ListServlet extends HttpServlet {
 				while (rs.next()) {
 					Map<String, String> customer = new HashMap<>();
 					customer.put("name", rs.getString("name"));
-					customer.put("kana", rs.getString("kana"));
+					customer.put("name_kana", rs.getString("name_kana"));
 					customer.put("zipcode", rs.getString("zipcode"));
 					customer.put("area", rs.getString("area"));
 					customer.put("gender", rs.getString("gender"));
