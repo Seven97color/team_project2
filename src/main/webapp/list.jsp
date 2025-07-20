@@ -9,20 +9,10 @@
 </head>
 <body>
 	<h2>顧客一覧</h2>
-	<form method="get" action="ListServlet">
-		<input type="text" id="searchName" name="searchName">
-		<button type="submit">検索</button>
-	</form>
 
-	<%-- 検索結果が0件の場合のメッセージ --%>
-	<%
-	if (request.getAttribute("customers") != null && ((List<?>) request.getAttribute("customers")).isEmpty()
-			&& request.getParameter("searchName") != null) {
-	%>
-	<p style="color: black;">検索結果はありません</p>
-	<%
-	}
-	%>
+	<c:if test="${not empty errorMsg}">
+		<p style="color: black;">${errorMsg}</p>
+	</c:if>
 
 	<table border="1">
 		<tr>
@@ -42,7 +32,7 @@
 				<td>${customer.area}</td>
 				<td>${customer.gender}</td>
 				<td>${customer.birthday}</td>
-				<td>${customer.tel}</td>
+				<td>${customer.phoneNumber}</td>
 			</tr>
 		</c:forEach>
 	</table>

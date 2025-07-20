@@ -21,14 +21,14 @@ public class RegisterServlet extends HttpServlet {
         String area = request.getParameter("area");
         String gender = request.getParameter("gender");
         String birthday = request.getParameter("birthday");
-        String tel = request.getParameter("tel");
+        String phone_number = request.getParameter("phone_number");
 
         // データベース接続
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection(
                 "jdbc:mysql://localhost:3306/customer_manager", "customer_managerU", "customer_managerP");
-            String sql = "INSERT INTO customers (name, kana, zipcode, area, gender, birthday, tel) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO customers (name, kana, zipcode, area, gender, birthday, phone_number) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, name);
             pstmt.setString(2, kana);
@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
             pstmt.setString(4, area);
             pstmt.setString(5, gender);
             pstmt.setString(6, birthday);
-            pstmt.setString(7, tel);
+            pstmt.setString(7, phone_number);
             pstmt.executeUpdate();
             pstmt.close();
             conn.close();

@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import model.entity.UserBean;
 
 public class UserDAO {
+	
 	/**
 	 * 入力されたuserId、passwordがデータベースに登録されているかチェック
 	 * @param id ユーザID
@@ -43,4 +46,24 @@ public class UserDAO {
 		}
 		return user;
 	}
+
+	public List<UserBean> findAll() throws ClassNotFoundException, SQLException {
+	    List<UserBean> list = new ArrayList<>();
+
+	    String sql = "SELECT * FROM m_user";
+
+	    try (Connection con = ConnectionManager.getConnection();
+	         PreparedStatement pstmt = con.prepareStatement(sql);
+	         ResultSet res = pstmt.executeQuery()) {
+
+	        while (res.next()) {
+	            UserBean user = new UserBean();
+	            user.setUserId(res.getString("user_id"));
+	            user.setPassword(res.getString("password"));  // ← 表示する場合は注意（本来は非表示推奨）
+	            list.add(user);
+	        }
+	    }
+	    return list;
+	}
+
 }
