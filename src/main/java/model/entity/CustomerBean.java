@@ -3,34 +3,60 @@ package model.entity;
 import java.io.Serializable;
 
 public class CustomerBean implements Serializable {
-    private String name;
-    private String kana;
-    private String zipcode;
-    private String area;
+    private String customerName;
+    private String postCode;
+    private String areaCode;
     private String gender;
     private String birthday;
     private String phoneNumber;
 
     public CustomerBean() {}
 
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
+    // customerName
+    public String getCustomerName() {
+        return customerName;
+    }
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
+    }
 
-    public String getKana() { return kana; }
-    public void setKana(String kana) { this.kana = kana; }
+    // postCode
+    public String getPostCode() {
+        return postCode;
+    }
+    public void setPostCode(String postCode) {
+        this.postCode = postCode;
+    }
 
-    public String getZipcode() { return zipcode; }
-    public void setZipcode(String zipcode) { this.zipcode = zipcode; }
+    // areaCode
+    public String getAreaCode() {
+        return areaCode;
+    }
+    public void setAreaCode(String areaCode) {
+        this.areaCode = areaCode;
+    }
 
-    public String getArea() { return area; }
-    public void setArea(String area) { this.area = area; }
+    // gender
+    public String getGender() {
+        return gender;
+    }
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-    public String getGender() { return gender; }
-    public void setGender(String gender) { this.gender = gender; }
+    // birthday
+    public String getBirthday() {
+        return birthday;
+    }
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
 
-    public String getBirthday() { return birthday; }
-    public void setBirthday(String birthday) { this.birthday = birthday; }
-
-    public String getPhoneNumber() { return phoneNumber; }
-    public void setPhoneNumber(String phoneNumber) { this.phoneNumber = phoneNumber; }
+    // phoneNumber
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }

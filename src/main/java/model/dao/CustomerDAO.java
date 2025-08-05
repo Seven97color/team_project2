@@ -14,7 +14,7 @@ public class CustomerDAO {
     public List<CustomerBean> findAll() throws ClassNotFoundException, SQLException {
         List<CustomerBean> list = new ArrayList<>();
 
-        String sql = "SELECT * FROM m_user";
+        String sql = "SELECT * FROM m_customer";  // テーブル名修正
 
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -22,10 +22,9 @@ public class CustomerDAO {
 
             while (res.next()) {
                 CustomerBean customer = new CustomerBean();
-                customer.setName(res.getString("name"));
-                customer.setKana(res.getString("kana"));
-                customer.setZipcode(res.getString("zipcode"));
-                customer.setArea(res.getString("area"));
+                customer.setCustomerName(res.getString("customer_name"));
+                customer.setPostCode(res.getString("post_code"));
+                customer.setAreaCode(res.getString("area_code"));
                 customer.setGender(res.getString("gender"));
                 customer.setBirthday(res.getString("birthday"));
                 customer.setPhoneNumber(res.getString("phone_number"));

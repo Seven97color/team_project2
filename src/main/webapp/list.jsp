@@ -17,7 +17,6 @@
 	<table border="1">
 		<tr>
 			<th>氏名</th>
-			<th>かな</th>
 			<th>郵便番号</th>
 			<th>地区</th>
 			<th>性別</th>
@@ -26,13 +25,12 @@
 		</tr>
 		<c:forEach items="${customers}" var="customer">
 			<tr>
-				<td>${customer.name}</td>
-				<td>${customer.kana}</td>
-				<td>${customer.zipcode}</td>
-				<td>${customer.area}</td>
+				<td>${customer.customer_name}</td>
+				<td>${customer.post_code}</td>
+				<td>${customer.area_code}</td>
 				<td>${customer.gender}</td>
 				<td>${customer.birthday}</td>
-				<td>${customer.phoneNumber}</td>
+				<td>${customer.phone_number}</td>
 			</tr>
 		</c:forEach>
 	</table>
