@@ -23,7 +23,7 @@ public class MenuServlet extends HttpServlet {
 		if ("顧客一覧".equals(button)) {
 			response.sendRedirect("ListServlet");
 		} else if ("顧客登録".equals(button)) {
-			response.sendRedirect("registration.jsp"); // 顧客登録画面のJSP名
+			response.sendRedirect("RegisterServlet"); // 顧客登録画面のJSP名
 		} else if ("権限編集".equals(button)) {
 			response.sendRedirect("");
 		} else {
